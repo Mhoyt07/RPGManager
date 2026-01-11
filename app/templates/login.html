@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Login · RPG Manager{% endblock %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-header">
+      <div class="brand">
+        <div class="brand-icon"></div>
+        <div class="brand-text">RPG Manager</div>
+      </div>
+      <div class="card-title">Game Master Login</div>
+      <div class="card-subtitle">
+        Sign in to manage campaigns, characters, and sessions.
+      </div>
+    </div>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+x
+    <form method="post" class="form">
+      <div class="field">
+        <div class="label-row">
+          <label for="username">Username</label>
+          <span class="label-hint">GM account</span>
+        </div>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          class="input"
+          autocomplete="username"
+          placeholder="gm"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <div class="label-row">
+          <label for="password">Password</label>
+          <span class="label-hint">Keep your world safe</span>
+        </div>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          class="input"
+          autocomplete="current-password"
+          placeholder="••••••••"
+          required
+        >
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="button-primary">
+          Enter the Realm
+        </button>
+      </div>
+
+      <div class="meta">
+        Single-user prototype. Later: add real accounts, registration, and password reset.
+      </div>
+    </form>
+  </div>
+{% endblock %}
