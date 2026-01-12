@@ -20,6 +20,12 @@
     {% endif %}
 
     <form method="post" class="form">
+        <input
+            type="hidden"
+            name="next"
+            value="{{ request.args.get('next', '') }}"
+        >
+
       <div class="field">
         <div class="label-row">
           <label for="username">Username</label>

@@ -1,13 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>{% block title %}RPG Manager{% endblock %}</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="utf-8">
+    <title>{% block title %}RPG Manager{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="page">
-    {% block content %}{% endblock %}
-  </div>
+    <div class="page">
+        {% block content %}{% endblock %}
+    </div>
+    <div id="LOGOUT">
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <footer>
+        <nav>
+            <ul class="footer-nav">
+            <li class="{% if active_tab == 'dashboard' %}active{% else %}inactive{% endif %}">
+                <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            </li>
+            <li class="{% if active_tab == 'characters' %}active{% else %}inactive{% endif %}">
+                <a href="{{ url_for('characters') }}">Characters</a>
+            </li>
+            <li class="{% if active_tab == 'campaigns' %}active{% else %}inactive{% endif %}">
+                <a href="{{ url_for('campaigns') }}">Campaigns</a>
+            </li>
+            <li class="{% if active_tab == 'settings' %}active{% else %}inactive{% endif %}">
+                <a href="{{ url_for('settings') }}">Settings</a>
+            </li>
+            </ul>
+        </nav>
+    </footer>
+
 </body>
 </html>
