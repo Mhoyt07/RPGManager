@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_auth.html" %}
 
 {% block title %}Login · RPG Manager{% endblock %}
 
@@ -18,7 +18,7 @@
     {% if error %}
       <div class="error">{{ error }}</div>
     {% endif %}
-x
+
     <form method="post" class="form">
       <div class="field">
         <div class="label-row">
