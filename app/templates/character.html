@@ -7,4 +7,34 @@
         <h1>Characters</h1>
         <p>Manage your RPG characters here.</p>
     </div>
+    <div class="characters-buttons">
+        <p>Count: <span id="counter-value">0</span></p>
+        <button id="counter-plus">Increment</button>
+        <button id="counter-minus">Decrement</button>
+    </div>
+    <script>
+        const inc_button = document.getElementById("counter-plus");
+        const dec_button = document.getElementById("counter-minus");
+
+        const counter = {
+            val: 1,
+            inc: function () {
+                this.val++;
+                document.getElementById("counter-value").innerText = this.val;
+            },
+            dec: function () {
+                this.val--;
+                document.getElementById("counter-value").innerText = this.val;
+            }
+
+        }
+        document.getElementById("counter-value").innerText = counter.val;
+        inc_button.addEventListener("click", function () {
+            counter.inc()
+        });
+        dec_button.addEventListener("click", function () {
+            counter.dec()
+        });
+        
+    </script>
 {% endblock %}
